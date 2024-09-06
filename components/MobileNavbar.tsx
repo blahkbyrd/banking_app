@@ -44,7 +44,7 @@ const MobileNavbar = ({ user }: MobileNavProps) => {
                         <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>Horizon</h1>
                     </Link>
                     <div className="mobilenav-sheet">
-                        <SheetClose asChild> 
+                        <SheetClose asChild>
                             {/* SheetClose enables the sheet to be closed wherever we click, not just on the close button. */}
                             <nav className='flex h-full flex-col gap-6 pt-16 text-white'>
                                 {sidebarLinks.map((link) => {
@@ -53,23 +53,29 @@ const MobileNavbar = ({ user }: MobileNavProps) => {
                                         <Link
                                             href={link.route}
                                             key={link.label}
-                                            className={cn('sidebar-link', { 'bg-bank-gradient': isActive })} >
-                                            <div className="relative size-6">
-                                                <Image
-                                                    fill
-                                                    alt={link.label}
-                                                    src={link.imgURL}
-                                                    className={cn({ 'brightness-[3] invert-0': isActive })} />
-                                            </div>
-                                            <p className={cn("sidebar-label", { '!text-white': isActive })} >{link.label}</p>
+                                            className={cn('mobilenav-sheet_close w-full',
+                                                { 'bg-bank-gradient': isActive })} >
+
+                                            <Image
+                                                width={20}
+                                                height={20}
+                                                alt={link.label}
+                                                src={link.imgURL}
+                                                className={cn({ 'brightness-[3] invert-0': isActive })} />
+
+                                            <p className={cn("text-16 font-semibold text-black-2",
+                                                { 'text-white': isActive })} >
+                                                {link.label}
+                                            </p>
 
                                         </Link>
                                     )
                                 })}
+                                USER
                             </nav>
                         </SheetClose>
+                        FOOTER
                     </div>
-
                 </SheetContent>
             </Sheet>
         </section>
