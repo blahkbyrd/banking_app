@@ -1,5 +1,8 @@
 /* eslint-disable no-unused-vars */
 
+import { authFormSchema } from "@/lib/utils";
+import { Control, FieldPath } from "react-hook-form";
+
 declare type SearchParamProps = {
   params: { [key: string]: string };
   searchParams: { [key: string]: string | string[] | undefined };
@@ -326,3 +329,4 @@ declare interface getBankProps {
 declare interface getBankByAccountIdProps {
   accountId: string;
 }
+
